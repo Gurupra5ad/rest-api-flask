@@ -13,8 +13,10 @@ for i in range(len(data)):
     print(response.json())
 
 input()
-response = requests.delete(BASE + "video/0")
-print(response)
+for i in range(len(data)):
+    response = requests.get(BASE + "video/" + str(i))
+    print(response.json())
+
 input()
-response = requests.get(BASE + "video/1")
+response = requests.patch(BASE + "video/2",{'views':99, 'likes':1785648})
 print(response.json())
